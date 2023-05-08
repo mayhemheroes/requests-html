@@ -1,0 +1,6 @@
+project: requests-html
+target: add_selector
+duration: 300
+
+cmds:
+    - cmd: /requests-html/fuzz/fuzz_targets/add_selector.py
