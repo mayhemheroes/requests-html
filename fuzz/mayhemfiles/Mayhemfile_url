@@ -3,5 +3,5 @@ target: url
 duration: 300
 
 cmds:
-  - cmd: /requests-html/fuzz/fuzz_targets/url.py
+  - cmd: python3 /requests-html/fuzz/fuzz_targets/url.py
     libfuzzer: true
