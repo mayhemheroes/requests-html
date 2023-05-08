@@ -14,14 +14,14 @@ def TestOneInput(input):
 
     def remove_control(s):
         return "".join(ch for ch in s if unicodedata.category(ch)[0]!="C")
-
     
     length = fdp.ConsumeIntInRange(0, 4096)
     try:
         doc = HTML(url="https://test.com", html=fdp.ConsumeUnicodeNoSurrogates(length))
         try:
-            xpath = remove_control(fdp.ConsumeUnicodeNoSurrogates(fdp.ConsumeIntInRange(0, 128)))
-            doc.xpath(xpath)
+            query = remove_control(fdp.ConsumeUnicodeNoSurrogates(fdp.ConsumeIntInRange(0, 128)))
+            doc.xpath(query)
+            doc.find(query)
         except XPathEvalError:
             return
     except ParserError:
