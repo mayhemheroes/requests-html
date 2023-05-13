@@ -1,0 +1,7 @@
+project: requests-html
+target: url
+duration: 300
+
+cmds:
+  - cmd: python3 /requests-html/fuzz/fuzz_targets/url.py
+    libfuzzer: true
